@@ -35,7 +35,7 @@ div#name {
     font-size: 2vw;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    color: hsl(0, 0%, 40%);
+    color: #5d5d5d;
   }
 }
 
@@ -48,9 +48,11 @@ body.about_bg {
 }
 
 div#about {
+  display: flex;
+  flex-direction: column;
   width: 80vw;
-  height: 80vh;
-  padding: 10vh 10vw;
+  height: 90vh;
+  padding: 5vh 10vw;
   font-family: 'Roboto', sans-serif;
   color: #2196f3;
 
@@ -59,9 +61,34 @@ div#about {
     line-height: 8vh;
   }
 
-  p {
-    padding-left: 1vw;
-    font-size: 3vh;
-    line-height: 4vh;
+  div.middle_container {
+    height: 40vh;
+
+    p {
+      padding-left: 1vw;
+      font-size: 3vh;
+      line-height: 6vh;
+    }
+
+    ul {
+      font-size: 3vh;
+      line-height: 6vh;
+
+      li {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  span {
+    display: block;
+    width: 4vmin;
+    height: 4vmin;
+    margin: auto;
+    border: solid #2196f3;
+    border-width: 0 1vmin 1vmin 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
   }
 }
