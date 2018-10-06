@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2196f3;
+  transition: 1s all;
+}
+
+/*
+ * First slide
+ */
+
+div#name {
+  width: 100vw;
+  height: 100vh;
+
+  h1 {
+    width: 100vw;
+    margin: 0;
+    padding-top: 35vh;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 7vw;
+    text-align: center;
+    color: white;
+  }
+
+  p {
+    width: 100vw;
+    margin: 0;
+    padding-top: 1vh;
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(0, 0%, 40%);
+  }
+}
+
+/*
+ * Second slide
+ */
+
+body.about_bg {
+  background-color: #2aff06;
+}
+
+div#about {
+  width: 80vw;
+  height: 80vh;
+  padding: 10vh 10vw;
+  font-family: 'Roboto', sans-serif;
+  color: #2196f3;
+
+  h2 {
+    font-size: 6vh;
+    line-height: 8vh;
+  }
+
+  p {
+    padding-left: 1vw;
+    font-size: 3vh;
+    line-height: 4vh;
+  }
+}
