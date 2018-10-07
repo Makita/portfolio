@@ -5,6 +5,7 @@ import githubLogo from './github-big-logo.svg';
 import avatarImage from './avatar-with-glasses-and-tie.svg';
 import resumeRsc from './Resume.pdf';
 import resumeJPRsc from './履歴書.pdf';
+import photo from './photo.png';
 
 class History extends Component {
   render() {
@@ -30,6 +31,7 @@ class History extends Component {
           <img src={avatarImage} alt="Resume" />
           <a href={resumeJPRsc}>Resume (Japanese)</a>
         </div>
+        <img src={photo} alt="Photo" id="selfie" />
       </div>
     );
   }

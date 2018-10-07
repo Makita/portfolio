@@ -129,6 +129,7 @@ body.history_bg {
 }
 
 div#history {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -164,6 +165,14 @@ div#history {
         color: white;
       }
     }
+  }
+
+  /* Selfie photo */
+  img#selfie {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30vw;
   }
 }
 
