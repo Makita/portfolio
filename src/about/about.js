@@ -27,6 +27,11 @@ class About extends Component {
   }
 
   render() {
+    let technologies = "HTML5, CSS3, JavaScript, Ruby, Ruby on Rails, Lua, React.js, Backbone.js, OOP, MVC, TDD, Native English, Business-level Japanese".split(", ");
+    let techList = technologies.map((tech) =>
+      <li>{tech}</li>
+    );
+
     return (
       <div id="about">
         <div id="introduction">
@@ -42,19 +47,7 @@ class About extends Component {
           <h2>The more you know...</h2>
           <div className="middle_container">
             <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>Ruby</li>
-              <li>Ruby on Rails</li>
-              <li>Lua</li>
-              <li>ReactJS</li>
-              <li>BackboneJS</li>
-              <li>OOP</li>
-              <li>MVC</li>
-              <li>TDD</li>
-              <li>Native English</li>
-              <li>Business-level Japanese</li>
+              {techList}
             </ul>
           </div>
         </div>
