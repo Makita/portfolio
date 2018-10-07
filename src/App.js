@@ -4,6 +4,7 @@ import './App.scss';
 import Name from './name/name.js'
 import About from './about/about.js'
 import History from './history/history.js'
+import Footer from './footer/footer.js'
 
 class App extends Component {
   onScroll() {
@@ -33,6 +34,7 @@ class App extends Component {
         <Name />
         <About />
         <History />
+        <Footer />
       </React.Fragment>
     );
   }

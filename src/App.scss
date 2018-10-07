@@ -62,7 +62,7 @@ div#about {
   display: flex;
   flex-direction: column;
   width: 80vw;
-  height: 90vh;
+  min-height: 90vh;
   padding: 5vh 10vw;
   font-family: 'Roboto', sans-serif;
   color: #2196f3;
@@ -129,14 +129,60 @@ body.history_bg {
 }
 
 div#history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 80vw;
-  height: 90vh;
+  height: 84vh;
   padding: 5vh 10vw;
   font-family: 'Roboto', sans-serif;
 
-  img {
-    height: 50%;
-    display: block;
-    margin: 0 auto;
+  div {
+    height: 7vmin;
+
+    img {
+      float: left;
+      height: 100%;
+      width: 7vmin;
+      margin: 0;
+    }
+
+    a {
+      float: left;
+      display: block;
+      text-decoration: none;
+      color: #fe0;
+      padding: 1.5vmin 10vmin 1.5vmin 6vmin;
+      margin-left: 1vmin;
+      font-size: 4vmin;
+      line-height: 4vmin;
+      background-color: #da001e;
+      transition: 0.7s all;
+      border-radius: 0 3vmin 3vmin 0;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+/*
+ * Footer
+ */
+#footer {
+  display: block;
+  width: 94vw;
+  padding: 2vh 3vw;
+  background-color: #ff4343;
+  font-family: 'Roboto', sans-serif;
+  color: #fe0;
+  text-align: right;
+  font-size: 2vh;
+  line-height: 2vh;
+
+  a {
+    text-decoration: none;
+    color: white;
   }
 }
