@@ -18,12 +18,12 @@ class History extends Component {
       {
         image: githubLogo,
         href: "https://github.com/Makita",
-        text: "Makita",
+        text: "Makita (Work)",
       },
       {
         image: githubLogo,
         href: "https://github.com/Madobe",
-        text: "Madobe",
+        text: "Madobe (Personal)",
       },
       {
         image: avatarImage,
