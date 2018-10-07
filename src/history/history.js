@@ -37,7 +37,7 @@ class History extends Component {
       },
     ];
     let links = values.map((hash) =>
-      <div>
+      <div key={hash.text}>
         <img src={hash.image} />
         <a href={hash.href}>{hash.text}</a>
       </div>
