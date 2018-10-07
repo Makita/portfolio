@@ -9,28 +9,43 @@ import photo from './photo.png';
 
 class History extends Component {
   render() {
+    let values = [
+      {
+        image: linkedInLogo,
+        href: "https://www.linkedin.com/in/justin-choi-a8413955/",
+        text: "Justin Choi",
+      },
+      {
+        image: githubLogo,
+        href: "https://github.com/Makita",
+        text: "Makita",
+      },
+      {
+        image: githubLogo,
+        href: "https://github.com/Madobe",
+        text: "Madobe",
+      },
+      {
+        image: avatarImage,
+        href: resumeRsc,
+        text: "Resume (English)",
+      },
+      {
+        image: avatarImage,
+        href: resumeJPRsc,
+        text: "Resume (Japanese)",
+      },
+    ];
+    let links = values.map((hash) =>
+      <div>
+        <img src={hash.image} />
+        <a href={hash.href}>{hash.text}</a>
+      </div>
+    );
+
     return (
       <div id="history">
-        <div>
-          <img src={linkedInLogo} alt="LinkedIn" />
-          <a href="https://www.linkedin.com/in/justin-choi-a8413955/">Justin Choi</a>
-        </div>
-        <div>
-          <img src={githubLogo} alt="Github" />
-          <a href="https://github.com/Makita">Makita (Work)</a>
-        </div>
-        <div>
-          <img src={githubLogo} alt="Github" />
-          <a href="https://github.com/Madobe">Madobe (Personal)</a>
-        </div>
-        <div>
-          <img src={avatarImage} alt="Resume" />
-          <a href={resumeRsc}>Resume (English)</a>
-        </div>
-        <div>
-          <img src={avatarImage} alt="Resume" />
-          <a href={resumeJPRsc}>Resume (Japanese)</a>
-        </div>
+        {links}
         <img src={photo} alt="Photo" id="selfie" />
       </div>
     );
