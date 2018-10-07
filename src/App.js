@@ -3,6 +3,7 @@ import './App.scss';
 
 import Name from './name/name.js'
 import About from './about/about.js'
+import History from './history/history.js'
 
 class App extends Component {
   onScroll() {
@@ -11,8 +12,10 @@ class App extends Component {
 
     if(currentScroll < windowHeight / 2) {
       document.body.className = "";
-    } else if(currentScroll > windowHeight / 2 && currentScroll < 2 * windowHeight) {
+    } else if(currentScroll > windowHeight / 2 && currentScroll < 2 * windowHeight - windowHeight / 2) {
       document.body.className = "about_bg";
+    } else if(currentScroll > 2 * windowHeight - windowHeight / 2 && currentScroll < 3 * windowHeight) {
+      document.body.className = "history_bg";
     }
   }
 
@@ -29,6 +32,7 @@ class App extends Component {
       <React.Fragment>
         <Name />
         <About />
+        <History />
       </React.Fragment>
     );
   }

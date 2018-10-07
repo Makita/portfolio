@@ -6,7 +6,7 @@ class Name extends Component {
     return (
       <div id="name">
         <h1>JUSTIN CHOI</h1>
-        <p>If it can be done, it shall be.</p>
+        <p>Web Developer and Software Engineer</p>
       </div>
     );
   }

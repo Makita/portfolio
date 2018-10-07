@@ -3,6 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -47,7 +48,17 @@ body.about_bg {
   background-color: #2aff06;
 }
 
+.slidein {
+  transform: translateX(-100vw);
+}
+
+.arrow_left {
+  transform: translateX(-92vw), rotate(-225deg) !important;
+  -webkit-transform: translateX(-92vw) rotate(-225deg) !important;
+}
+
 div#about {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 80vw;
@@ -55,6 +66,7 @@ div#about {
   padding: 5vh 10vw;
   font-family: 'Roboto', sans-serif;
   color: #2196f3;
+  text-shadow: 0.5px 0.5px #49d5ff;
 
   h2 {
     font-size: 6vh;
@@ -62,12 +74,12 @@ div#about {
   }
 
   div.middle_container {
-    height: 40vh;
+    height: 80vh;
 
     p {
       padding-left: 1vw;
       font-size: 3vh;
-      line-height: 6vh;
+      line-height: 5vh;
     }
 
     ul {
@@ -82,13 +94,49 @@ div#about {
   }
 
   span {
+    position: absolute;
+    top: calc(50% - 2vmin);
+    right: 4vmin;
     display: block;
     width: 4vmin;
     height: 4vmin;
     margin: auto;
     border: solid #2196f3;
     border-width: 0 1vmin 1vmin 0;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: 1s all;
+  }
+
+  #introduction {
+    transition: 1s all;
+  }
+
+  #technologies {
+    position: absolute;
+    left: 100%;
+    width: 100vw;
+    padding-left: 10vw;
+    transition: 1s all;
+  }
+}
+
+/*
+ * Third slide
+ */
+body.history_bg {
+  background-color: #fe0;
+}
+
+div#history {
+  width: 80vw;
+  height: 90vh;
+  padding: 5vh 10vw;
+  font-family: 'Roboto', sans-serif;
+
+  img {
+    height: 50%;
+    display: block;
+    margin: 0 auto;
   }
 }
