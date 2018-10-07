@@ -33,8 +33,8 @@ class About extends Component {
           <h2>Let me introduce myself</h2>
           <div className="middle_container">
             <p>Having started poking away at a keyboard from five years old and even gotten my toes wet with ASM and C, I was on the road to computer development before I could even consider employment. I believe that, especially with us being in the "Information Age", knowledge is power. And what other way to gain power but to simply learn more? My thirst for knowledge is only superceded by my desire to put that knowledge into action. I enjoy taking everything that I know and placing it against new challenges.</p>
-            <p>I specialize in back end development but can also hold my own in the front end. Just don't ask me to create an artistic masterpiece. But while I may have a tendency to leave art up to the design specialists, I make up for it with my specialty in the processing. I know that uptime is a key concern and strike a balance between utilizing the newest techologies and building upon the proven stability of long-standing frameworks and practices.</p>
-            <p>Outside of the development world, I busy myself with gaming, psychology, and Japanese animation (with related media).</p>
+            <p>I specialize in back-end development. I know that uptime and stability are key concerns and strike a balance between utilizing the newest technologies and relying on the tried-and-true systems. I reach out to new technologies and immediately put them to practical use, the latest example being this very portfolio! This marks my first project using React.js and I hope for it to be the first of many.</p>
+            <p>Outside of the development world, I busy myself with gaming, psychology, and Japanese animation (with related media). I also happen to possess an uncanny love for cooking, particularly baking.</p>
           </div>
         </div>
 
