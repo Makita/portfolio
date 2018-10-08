@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 
+function TechItem(props) {
+  return <li key={props.techName}>{props.techName}</li>;
+}
+
+function TechList(props) {
+  let technologies = "HTML5, CSS3, JavaScript, Ruby, Ruby on Rails, Lua, React.js, Backbone.js, OOP, MVC, TDD, Native English, Business-level Japanese".split(", ");
+  return technologies.map((tech) =>
+    <TechItem techName={tech} />
+  );
+}
+
 class About extends Component {
   constructor(props) {
     super(props);
@@ -27,11 +38,6 @@ class About extends Component {
   }
 
   render() {
-    let technologies = "HTML5, CSS3, JavaScript, Ruby, Ruby on Rails, Lua, React.js, Backbone.js, OOP, MVC, TDD, Native English, Business-level Japanese".split(", ");
-    let techList = technologies.map((tech) =>
-      <li key={tech}>{tech}</li>
-    );
-
     return (
       <div id="about">
         <div id="introduction">
@@ -47,7 +53,7 @@ class About extends Component {
           <h2>The more you know...</h2>
           <div className="middle_container">
             <ul>
-              {techList}
+              <TechList />
             </ul>
           </div>
         </div>
