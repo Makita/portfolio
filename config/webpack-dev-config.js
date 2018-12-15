@@ -33,24 +33,40 @@ module.exports = merge(common, {
       },
       {
         test: /\.(css|scss)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appModules)],
+        exclude: [
+          path.resolve("node_modules/primereact/resources/themes/nova-light/theme.css"),
+          path.resolve("node_modules/primereact/resources/primereact.min.css"),
+          path.resolve("node_modules/primeicons/primeicons.css")
+        ],
         use: [
-          {
-            loader: "style-loader"
-          },
+          "style-loader",
           {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              modules: true // Local scoping
+              modules: true, // Local scoping
+              localIdentName: "[name]__[local]___[hash:base64:5]"
             }
           },
+          "sass-loader"
+        ]
+      },
+      {
+        test: /\.(css|scss)$/,
+        include: [
+          path.resolve("node_modules/primereact/resources/themes/nova-light/theme.css"),
+          path.resolve("node_modules/primereact/resources/primereact.min.css"),
+          path.resolve("node_modules/primeicons/primeicons.css")
+        ],
+        use: [
+          "style-loader",
           {
-            loader: "sass-loader",
+            loader: "css-loader",
             options: {
-              outputStyle: "nested"
+              importLoaders: 1
             }
-          }
+          },
+          "sass-loader"
         ]
       }
     ]
