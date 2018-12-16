@@ -3,7 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const paths = require("./paths");
 const common = require("./webpack-common-config.js");
@@ -26,7 +26,7 @@ module.exports = merge(common, {
         NODE_ENV: JSON.stringify("production")
       }
     }),
-    new ExtractTextPlugin("styles.css")
+    new MiniCssExtractPlugin("styles.css")
   ],
   module: {
     rules: [
@@ -43,27 +43,52 @@ module.exports = merge(common, {
       },
       {
         test: /\.(css|scss)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appModules)],
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                discardDuplicates: true,
-                sourceMap: false,
-                modules: true, // Locally scoped
-                localIdentName: "[name]__[local]___[hash:base64:5]"
-              }
-            },
-            {
-              loader: "sass-loader",
-              options: {
-                outputStyle: "compressed"
-              }
+        exclude: [
+          path.resolve(
+            "node_modules/primereact/resources/themes/nova-light/theme.css"
+          ),
+          path.resolve("node_modules/primereact/resources/primereact.min.css"),
+          path.resolve("node_modules/primeicons/primeicons.css")
+        ],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: false,
+              modules: true, // Locally scoped
+              localIdentName: "[name]__[local]___[hash:base64:5]"
             }
-          ]
-        })
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              outputStyle: "compressed"
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(css|scss)$/,
+        include: [
+          path.resolve(
+            "node_modules/primereact/resources/themes/nova-light/theme.css"
+          ),
+          path.resolve("node_modules/primereact/resources/primereact.min.css"),
+          path.resolve("node_modules/primeicons/primeicons.css")
+        ],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
+            }
+          },
+          "sass-loader"
+        ]
       }
     ]
   }
