@@ -1,35 +1,38 @@
-import React, { Component } from "react";
+import React from "react";
 import { Menubar } from "primereact/menubar";
-import { withRouter } from "react-router";
+import { Button } from "primereact/button";
 
-class Navbar extends Component {
-  handleClick = (event, url) => {
-    event.preventDefault();
-    this.props.history.push(url);
-  };
+const Navbar = () => {
+  const items = [
+    {
+      label: "Resume",
+      icon: "pi pi-fw pi-file",
+      target: "_blank",
+      url: "https://drive.google.com/open?id=1dz8LRuH2kA2_waJAUBc50dE3PLjGpV3j"
+    },
+    {
+      label: "LinkedIn",
+      icon: "fab fa-linkedin",
+      target: "_blank",
+      url: "https://www.linkedin.com/in/justin-choi-a8413955/"
+    },
+    {
+      label: "Github",
+      icon: "fab fa-github",
+      target: "_blank",
+      url: "https://github.com/Makita"
+    }
+  ];
 
-  render() {
-    const items = [
-      {
-        label: "Home",
-        icon: "pi pi-fw pi-home",
-        url: "/",
-        command: ({ originalEvent }) => {
-          this.handleClick(originalEvent, "/");
-        }
-      },
-      {
-        label: "Resume",
-        icon: "pi pi-fw pi-file",
-        url: "/references",
-        command: ({ originalEvent }) => {
-          this.handleClick(originalEvent, "/references");
-        }
-      }
-    ];
+  return (
+    <Menubar model={items}>
+      <Button
+        label="Contact Me"
+        icon="pi pi-envelope"
+        onClick={() => (window.location = "mailto:justin.choi.000@gmail.com")}
+      />
+    </Menubar>
+  );
+};
 
-    return <Menubar model={items} />;
-  }
-}
-
-export default withRouter(Navbar);
+export default Navbar;

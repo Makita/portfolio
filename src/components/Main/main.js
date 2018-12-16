@@ -1,13 +1,16 @@
 import React from "react";
 
-import Navbar from "Components/Navbar/navbar";
 import Splash from "Components/Splash/splash";
-import Experience from "Components/Experience/experience";
+import About from "Components/About/about";
+import Timeline from "Components/Timeline/timeline";
+import Navbar from "Components/Navbar/navbar";
 
 const Main = () => (
   <React.Fragment>
-    <Navbar />
     <Splash />
+    <About />
+    <Timeline />
+    <Navbar />
   </React.Fragment>
 );
 
